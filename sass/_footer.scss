@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+
+@import "_variables.scss";
+@import "_mixins.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    @include flex-column;
+    gap: 16px;
+    background-color: $gray-dark;
+    color: white;
+    padding: 30px;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row-reverse;
+        gap: 50px;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+        font-family: $font-seconday;
+    }
+    
+    .box__footer {
+        @include flex-column;
+        gap: 5px;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .box__footer-icone {
+            @include flex-row;
+            align-items: center;
+            gap: 5px;
+
+            i {
+                font-size: 10px;
+            }
+
+            h4 {
+                font-family: $font-primary;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font-family: $font-primary;
+        font-weight: 400;
+    }
+}
