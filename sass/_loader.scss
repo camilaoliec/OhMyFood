@@ -1,0 +1,109 @@
+
+@import "_variables.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    z-index: 9999;
+    animation: fadeOutLoader 5s linear forwards;
+
+
+    .loader-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        font-family: $font-seconday;
+        font-size: 30px;
+        color: white;
+        transform: translate(-50%, -50%);
+
+        @media screen and (min-width: 768px) {
+            font-size: 40px;
+            top: 30%;
+        }
+
+        span {
+            position: absolute;
+            animation: spin 9s linear infinite, colorChange 2s linear infinite, glowShadow 3s linear infinite;
+            transform-origin: center 100px;
+            animation-delay: calc(var(--i) * -0.8s);
+
+            @media screen and (min-width: 768px) {
+                transform-origin: center 160px;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+   from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        color: #ff79da;
+    }
+
+    50% {
+        color: #9356DC;
+    }
+}
+@keyframes glowShadow {
+    0%, 100% {
+    text-shadow: 0 0 0 $pink-btn,
+                 0 0 60px $pink-btn,
+                 0 0 80px $pink-btn,
+                 0 0 0 $purple,
+                 0 0 60px $purple,
+                 0 0 80px $purple;
+    }
+    50% {
+    text-shadow: 0 0 0 $purple,
+                 0 0 60px $purple,
+                 0 0 80px $purple,
+                 0 0 0 $pink-btn,
+                 0 0 60px $pink-btn,
+                 0 0 80px $pink-btn;
+    }
+}
+
+@keyframes fadeOutLoader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    50% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
