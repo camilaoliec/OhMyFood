@@ -6,10 +6,19 @@
 @import "_footer.scss";
 @import "_loader.scss";
 
-
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+.main-container {
+    width: 100%;
+    max-width: 1440px;
 }
 
 ::placeholder {
@@ -43,7 +52,7 @@
     background-color: #eaeaea;
     box-shadow: inset 0 4px 5px rgba(168, 170, 168, 0.4), 0 4px 5px rgba(153, 153, 153, 0.688);
     width: 100%;
-    height: 40px;
+    height: 50px;
     padding: 10px 0;
     z-index: 2;
     position: relative;
@@ -140,12 +149,18 @@
     gap: 30px;
     height: auto;
     margin-bottom: 50px;
+    padding: 1rem;
 
     h2 {
-        padding: 50px 0 0 20px;
+        padding: 2rem 1rem 0 1rem;
         font-family: $font-primary;
         font-weight: 700;
         font-size: 24px;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
     }
 
     &__box {
@@ -156,8 +171,8 @@
 
     &__group {
         display: flex;
-        justify-content: center;
         align-items: center;
+        width: 100%;
     }
         
     &__ball {
@@ -179,7 +194,7 @@
 
     &__btn {
         height: 72px;
-        width: 322px;
+        width: 100%;
         background-color: $gray-light;
         border: none;
         border-radius: 20px;
@@ -213,9 +228,9 @@
     background-color: $gray-light;
     width: 100%;
     padding-bottom: 70px;
+    padding: 2rem;
     
     h2 {
-        padding: 50px 0 0 20px;
         font-family: $font-primary;
         font-size: 24px;
         font-weight: 700;
@@ -231,10 +246,11 @@
             @include flex-column;
             position: relative;
             z-index: 1;
+            width: 100%;
 
             &__link {
                 text-decoration: none;
-                width: 346px;
+                width: 100%;
 
                 &-sticker {
                     display: flex;
@@ -249,7 +265,7 @@
                     font-size: 14px;
                     color: #008766;
                     position: absolute;
-                    right: 20px;
+                    right: 30px;
                     top: 15px;
                     z-index: 2;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -303,7 +319,7 @@
                 background: transparent;
                 position: absolute;
                 bottom: 20px;
-                left: 300px;
+                right: 15px;;
                 z-index: 2;
             }
                 .heart-btn::before {
@@ -337,7 +353,7 @@
 
 // DEKSTOP
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
 
     .navbar {
         img {
@@ -354,19 +370,21 @@
     }
 
     .fonctionnement {
-        height: 228px;
         margin: 0;
+        padding: 3rem 9rem;
 
-        &__title {
+        h2 {
+            padding: 0;
             display: flex;
             justify-content: flex-start;
             align-self: flex-start;
+            flex-wrap: wrap;
         }
 
-        h2 {
-            margin-top: 40px;
-            margin-left: 180px;
-            padding: 0;
+        &__container {
+            flex-direction: row;
+            justify-content: center;
+            gap: 0;
         }
 
         &__box {
@@ -378,7 +396,7 @@
         }
 
         &__btn {
-            width: 300px; 
+            width: 100%; 
 
             &-txt {
                 padding: 0 20px 0 20px;
@@ -389,26 +407,20 @@
     .restaurants {
         @include flex-column;
             gap: 28px;
-            padding: 50px 0;
+            padding: 3rem 9rem;
 
         h2 {
-            margin-left: 180px;
             padding: 0;
         }
 
         &__box {
-            flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 50px;
-
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto;
+            gap: 50px;
             .card {
                 &__link {
-                    width: 490px;
-                }
-                
-                .heart-btn {
-                    left: 430px;
+                    width: 100%;
                 }
             }
         }

@@ -58,9 +58,20 @@ footer p {
   font-weight: 400;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1440px;
+}
+
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 .navbar .navbar__logo {
@@ -101,13 +112,14 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   height: auto;
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   margin-top: -50px;
   z-index: 2;
   position: relative;
+  padding: 1rem;
+  gap: 28px;
 }
 .plats__title-heart {
   display: flex;
@@ -115,7 +127,7 @@ footer p {
   gap: 40px;
   align-items: center;
   height: 29px;
-  padding: 40px 20px 0 30px;
+  margin-top: 30px;
 }
 .plats__title-heart h1 {
   font-family: "Shrikhand", serif;
@@ -164,13 +176,13 @@ footer p {
   width: 100%;
 }
 .plats__box-title {
-  border-bottom: 3px #99E2D0 solid;
+  border-bottom: 3px #99e2d0 solid;
   width: 40px;
   padding-bottom: 3px;
-  margin: 50px 0 20px 25px;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  margin: 20px 0 20px 0;
 }
 .plats__box-group {
   display: flex;
@@ -181,8 +193,8 @@ footer p {
 .plats__box-group .card {
   display: flex;
   align-items: center;
-  width: 90%;
-  height: 72px;
+  width: 100%;
+  height: 69px;
   border-radius: 15px;
   border: none;
   background-color: white;
@@ -199,7 +211,8 @@ footer p {
   gap: 5px;
   overflow: hidden;
 }
-.plats__box-group .card__txt h2, .plats__box-group .card__txt h3 {
+.plats__box-group .card__txt h2,
+.plats__box-group .card__txt h3 {
   padding-left: 20px;
   font-size: 18px;
   font-family: "Roboto", sans-serif;
@@ -227,7 +240,7 @@ footer p {
 }
 .plats__box-group .card .check {
   display: flex;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   align-items: center;
   justify-content: center;
   width: 60px;
@@ -277,7 +290,7 @@ footer p {
   height: 50px;
   background-image: linear-gradient(#ff79da, #9356DC);
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
   color: white;
   border: none;
@@ -326,7 +339,11 @@ footer p {
     opacity: 1;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
   .navbar__logo {
     height: 96px;
   }
@@ -338,19 +355,22 @@ footer p {
     height: 383px;
   }
   .plats {
-    width: 80%;
-    margin: -40px auto 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
+    width: 60%;
+    margin-top: -4rem;
+    padding: 3rem 9rem;
   }
-  .plats__box-title {
-    margin-left: 150px;
+  .plats__title-heart {
+    margin-top: 0;
+  }
+  .plats__box {
+    width: 80%;
   }
   .plats__box-group .card {
-    width: 634px;
+    width: 100%;
   }
   .plats__box-group button.btn {
     width: 186px;
+    margin-bottom: 0;
   }
 }
 
