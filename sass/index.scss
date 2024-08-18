@@ -210,10 +210,18 @@ body {
 
             i {
                 color: #7E7E7E;
+            }
+        }
 
-                &:hover, &:focus {
-                    color: $purple;
-                }
+        &-txt-violet {
+            @include flex-row;
+            justify-content: space-evenly;
+            font-family: $font-primary;
+            font-size: 16px;
+            font-weight: 500;
+
+            i {
+                color: $purple;
             }
         }
     }

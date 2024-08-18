@@ -57,6 +57,10 @@ footer p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
 
 * {
   margin: 0;
@@ -337,7 +341,15 @@ body {
 .fonctionnement__btn-txt i {
   color: #7E7E7E;
 }
-.fonctionnement__btn-txt i:hover, .fonctionnement__btn-txt i:focus {
+.fonctionnement__btn-txt-violet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+.fonctionnement__btn-txt-violet i {
   color: #9356DC;
 }
 
